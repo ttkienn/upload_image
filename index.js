@@ -38,7 +38,7 @@ app.get('/', function (req, res) {
     res.render('../FrontEnd/upload/index.ejs');
 });
 
-var PORT = 3000 || process.env.PORT;
+var PORT = process.env.PORT || 3000 ;
 
 app.listen(PORT, function () {
     console.log('[ SYSTEM ]: '.brightGreen + ('Server started on port ' + PORT).brightWhite);
