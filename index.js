@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({extended:true,limit:1024*1024*20,type:'applicatio
 
 routes.getRoutes(app);
 
-app.use(express.static(__dirname + '/Frontend/upload'));
+app.use(express.static(__dirname + '/public/upload'));
 
 app.set('view engine', 'ejs');
 
@@ -35,7 +35,7 @@ app.get('/', function (req, res) {
     if (!fs.existsSync(path.join(__dirname, './cache/data.json'))) {
         fs.writeFileSync(path.join(__dirname, './cache/data.json'), JSON.stringify([]));
     }
-    res.render('../FrontEnd/upload/index.ejs');
+    res.render('../public/upload/index.ejs');
 });
 
 var PORT = 3000 || process.env.PORT;
