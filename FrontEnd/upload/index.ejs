@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Upload Files</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodePen - Animated image upload form</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap -->
 </head>
+
 <body>
-    <div class="mb-3">
-        <form action="/uploadfile" enctype="multipart/form-data" method="POST"> 
-            <label for="formFile" class="form-label">Default file input example</label>
-            <input class="form-control" type="file" id="formFile" name="formFile">
-            <input type="submit" value="Upload a file"/>
-        </form>
-    </div>
+
+  <style type="text/css">
+    body {
+      background: rgb(201, 255, 201) !important;
+    }
+  </style>
+  <!-- partial:index.partial.html -->
+  <div class="uploadWrapper">
+    <form id="imageUploadForm" class="imageUploadForm" action="imageUploadForm">
+      <span class="helpText" id="helpText">Upload an image</span>
+      <input type='file' id="file" class="uploadButton" accept="image/*" />
+      <div id="uploadedImg" class="uploadedImg">
+        <span class="unveil"></span>
+      </div>
+      <span class="pickFile">
+        <a href="#" class="pickFileButton">Pick file</a>
+      </span>
+    </form>
+    <div class="success"></div>
+  </div>
+  <!-- partial -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+
 </body>
+
 </html>

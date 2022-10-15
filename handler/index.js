@@ -13,15 +13,15 @@ class routes extends config {
     super(name, method, path, handler);
   }
 
-  getRoutes(app) {
-    fs.readdirSync('./routes').forEach(function(file) {
+  async getRoutes(app) {
+    fs.readdirSync('./routes').forEach(function (file) {
       if (file.split('.')[1] != 'js') return;
-      console.log('[ SYSTEM ]: '.brightGreen + `Loading route ${ file.split('.')[0] }`.brightWhite);
-      const route = require(`../routes/${ file }`);
+      console.log('[ SYSTEM ]: '.brightGreen + `Loading route ${file.split('.')[0]}`.brightWhite);
+      const route = require(`../routes/${file}`);
       const routeName = route.name;
       const routeMethod = route.method.toLowerCase();
       const callback = route.handler;
-      app[routeMethod](`/${ routeName }`, callback);
+      app[routeMethod](`/${routeName}`, callback);
     });
   }
 }
