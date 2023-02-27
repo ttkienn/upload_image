@@ -47,3 +47,4 @@ class Photo {
 }
 
 module.exports = new Photo();
+
